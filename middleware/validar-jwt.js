@@ -9,7 +9,7 @@ const generarJWT = (id) => {
       payload,
       process.env.SECRETORPRIVATEKEY,
       {
-        expiresIn: "300h", 
+        expiresIn: "2400h", 
       },
       (err, token) => {
         if (err) {
@@ -34,7 +34,7 @@ const validarJWT = (req, res, next) => {
     const { id } = jwt.verify(token, process.env.SECRETORPRIVATEKEY); 
     let holder = Holder.findById(id);
     if (!holder) {
-      return res.status(401).json({ msg: "Token no valido" });
+      return res.status(401).json({ msg: "Token invalido" });
     }
     if(holder.state===0){
         return res.status(401).json({ msg: "Holder inactivo" });
@@ -43,7 +43,7 @@ const validarJWT = (req, res, next) => {
     next();
   } catch (error) {
     console.log(error);
-    res.status(401).json({ msg: "Token no valido" });
+    res.status(401).json({ msg: "Token invalido" });
   }
 };
 

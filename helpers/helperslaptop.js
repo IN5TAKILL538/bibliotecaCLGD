@@ -5,7 +5,7 @@ const helperLaptop = {
   validarId: async (id) => {
     const existe = await Laptop.findById(id);
     if (!existe) {
-      throw new Error("El ID no existe en la BD");
+      throw new Error("El ID no existe en la Base de Datos");
     }
   },
   validarQrCode: async (qrcode) => {
