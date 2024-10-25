@@ -2,6 +2,7 @@ const Entry = require("../models/Entry");
 const Laptop = require("../models/Laptop");
 const Holder = require("../models/Holder");
 
+
 const helperEntry = {
   validarId: async (id) => {
     const existe = await Entry.findById(id);
@@ -22,5 +23,4 @@ const helperEntry = {
     }
   }
 };
-
 module.exports = { helperEntry };

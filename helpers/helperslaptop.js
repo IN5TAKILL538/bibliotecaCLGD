@@ -1,5 +1,6 @@
 const Laptop = require("../models/Laptop");
 
+
 const helperLaptop = {
   validarId: async (id) => {
     const existe = await Laptop.findById(id);
@@ -14,5 +15,4 @@ const helperLaptop = {
     }
   }
 };
-
 module.exports = { helperLaptop };

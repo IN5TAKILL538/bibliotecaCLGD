@@ -17,10 +17,7 @@ const helperHolder = {
     }
   },
 
-
-
   validarDocumento: async (document = '') => {
-   
     const existe = await Holder.findOne({ document });
     if (existe) {
       throw new Error(`El documento ${document} ya está registrado`);
@@ -28,11 +25,9 @@ const helperHolder = {
   },
 
   validarFicha: (ficha = '') => {
-    
     if (isNaN(ficha)) {
       throw new Error("La ficha debe ser un número válido");
     }
   }
 };
-
 module.exports = { helperHolder };

@@ -1,4 +1,4 @@
-const Entry = require('../models/entry');
+const Entry = require('../models/Entry');
 
 const entryController = {
     postEntry: async (req, res) => {

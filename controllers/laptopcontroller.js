@@ -1,4 +1,4 @@
-const Laptop = require('../models/laptop');
+const Laptop = require('../models/Laptop');
 const QRCode = require('qrcode');
 
 const laptopController = {
